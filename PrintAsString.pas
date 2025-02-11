@@ -11,15 +11,26 @@ implementation
 
 function PrintHW() : String;
 var
-  obj : TBase;
+  obj : TPrintHW;
 begin
-  obj := TStringClass.Create;
+
+  obj := TPrintHW.Create;
   try
-    obj.DoSomething();
-    result := obj.pTheValue;
+
+    var builderObj : TBase;
+    builderObj := {TStringClass}THexClass.Create;
+    try
+      result := obj.BuildHelloWorldString(builderObj);
+    finally
+      builderObj.Free;
+    end;
+
+
   finally
     obj.Free;
   end;
+
+
 end;
 
 end.

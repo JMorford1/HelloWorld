@@ -37,7 +37,7 @@ end;
 
 procedure TForm1.PrintAsStringButtonClick(Sender: TObject);
 begin
- OutputMemo.Lines.Add(PrintHW());
+  OutputMemo.Lines.Add(PrintHW());
 end;
 
 end.

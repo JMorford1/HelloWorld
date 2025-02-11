@@ -15,42 +15,43 @@ type
     FValue : String;
   public
     property pTheValue : String read FValue;
-    procedure DoSomething(); virtual; abstract;
+    procedure BuildString(); virtual; abstract;
   end;
 
   TStringClass = class(TBase)
   public
-    procedure DoSomething(); override;
+    procedure BuildString(); override;
   end;
 
-//  THexClass = class(TBase)
-//  public
-//    procedure DoSomething(); override;
-//  end;
+  THexClass = class(TBase)
+  public
+    procedure BuildString(); override;
+  end;
 
   TPrintHW = class(TObject)
   strict private
     FBaseObj : TBase;
   public
-    function DoSomething(baseObj:TBase) : String;
+    function BuildHelloWorldString(baseObj:TBase) : String;
   end;
 
 implementation
 
-procedure TStringClass.DoSomething();
+procedure TStringClass.BuildString();
 begin
- FValue := 'Hello World';
+  FValue := 'Hello World';
 end;
 
-//procedure THexClass.DoSomething();
-//begin
-//  FValue := '$48$65$6C$6C$6F$20$57$6F$72$6C$64';
-//end;
+procedure THexClass.BuildString();
+begin
+  FValue := Chr($48) + Chr($65) + Chr($6C) + Chr($6C) + Chr($6F) +
+            Chr($20) + Chr($57) + Chr($6F) + Chr($72) + Chr($6C) + Chr($64);
+end;
 
-function TPrintHW.DoSomething(baseObj:TBase) : String;
+function TPrintHW.BuildHelloWorldString(baseObj:TBase) : String;
 begin
   FBaseObj := baseObj;
-  FBaseObj.DoSomething();
+  FBaseObj.BuildString();
   result := FBaseObj.pTheValue;
 end;
 end.

@@ -18,10 +18,8 @@ object Form1: TForm1
     Height = 976
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 376
-    ExplicitTop = 176
-    ExplicitWidth = 393
-    ExplicitHeight = 377
+    ExplicitWidth = 825
+    ExplicitHeight = 959
   end
   object ControlsPanel: TPanel
     Left = 0
@@ -32,7 +30,7 @@ object Form1: TForm1
     Caption = 'ControlsPanel'
     ShowCaption = False
     TabOrder = 1
-    ExplicitLeft = -6
+    ExplicitHeight = 959
     object ExitButton: TButton
       Left = 56
       Top = 64
@@ -50,7 +48,7 @@ object Form1: TForm1
     end
     object PrintAsStringButton: TButton
       Left = 56
-      Top = 160
+      Top = 184
       Width = 249
       Height = 49
       Caption = 'Print Hello World as String'
